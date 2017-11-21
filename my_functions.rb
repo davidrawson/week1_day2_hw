@@ -7,12 +7,12 @@ end
 
 p add(2, 3)
 
-def population_density(population, area)
-  return population/area
-end
-
-p "The population density of Mauritius is #{population_density(5373000, 77933)} ppl/sq.km."
-
+# def population_density(population, area)
+#   return population/area
+# end
+#
+# p "The population density of Mauritius is #{population_density(5373000, 77933)} ppl/sq.km."
+#
 def subtract(first_number, second_number)
   return first_number - second_number
 end
@@ -57,7 +57,32 @@ def number_to_short_month_name (number)
 end
 
 def volume_of_cube (number)
-
   return number**3
+end
 
+# This is inexact. The 1.3333 etc should be 4/3 expressed as a float.
+# The function also returns a rounded down value. Sloppy.
+# def volume_of_sphere(radius)
+#   volume = 1.333333*3.141592654*(radius**3)
+#   return volume.to_i
+# end
+
+# This is still iffy as we return an integer to cope
+# with insufficiently accurate test values.
+def volume_of_sphere(radius)
+  volume = (4.0/3.0)*3.141592654*(radius**3)
+  return volume.to_i
+end
+
+# Again, this is inexact and unsatisfactory.
+# def fahrenheit_to_celsius(number)
+#   celsius_temp = (number-32) * 0.55555555555555
+#   return celsius_temp.to_i
+# end
+
+# This is still iffy as we return an integer to cope
+# with insufficiently accurate test values.
+def fahrenheit_to_celsius(number)
+  celsius_temp = (number-32) * (5.0/9.0)
+  return celsius_temp.to_i
 end
